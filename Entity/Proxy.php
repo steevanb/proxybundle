@@ -12,194 +12,195 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Proxy
 {
-    /**
-     * State
-     */
-    const STATE_ENABLED = 1;
-    const STATE_DISABLED = 2;
-    const STATE_DELETED = 3;
-    /**
-     * @var int
-     *
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
+	/**
+	 * State
+	 */
+	const STATE_ENABLED = 1;
+	const STATE_DISABLED = 2;
+	const STATE_DELETED = 3;
+	/**
+	 * @var int
+	 *
+	 * @ORM\Column(type="integer")
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=45)
-     */
-    private $address;
+	/**
+	 * @var string
+	 *
+	 * @ORM\Column(type="string", length=45)
+	 */
+	private $address;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(type="integer", options={"unsigned"=true})
-     */
-    private $port;
+	/**
+	 * @var int
+	 *
+	 * @ORM\Column(type="integer", options={"unsigned"=true})
+	 */
+	private $port;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(type="smallint", options={"unsigned"=true})
-     */
-    private $state = self::STATE_ENABLED;
+	/**
+	 * @var int
+	 *
+	 * @ORM\Column(type="smallint", options={"unsigned"=true})
+	 */
+	private $state = self::STATE_ENABLED;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(type="datetime")
-     */
-    private $date;
+	/**
+	 * @var \DateTime
+	 *
+	 * @ORM\Column(type="datetime")
+	 */
+	private $date;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(type="smallint", options={"unsigned"=true})
-     */
-    private $errors = 0;
+	/**
+	 * @var int
+	 *
+	 * @ORM\Column(type="smallint", options={"unsigned"=true})
+	 */
+	private $errors = 0;
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+	/**
+	 * Get id
+	 *
+	 * @return int
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}
 
-    /**
-     * Set address
-     *
-     * @param string $address
-     * @return $this
-     */
-    public function setAddress($address)
-    {
-        $this->address = $address;
-        return $this;
-    }
+	/**
+	 * Set address
+	 *
+	 * @param string $address
+	 * @return $this
+	 */
+	public function setAddress($address)
+	{
+		$this->address = $address;
+		return $this;
+	}
 
-    /**
-     * Get address
-     *
-     * @return string
-     */
-    public function getAddress()
-    {
-        return $this->address;
-    }
+	/**
+	 * Get address
+	 *
+	 * @return string
+	 */
+	public function getAddress()
+	{
+		return $this->address;
+	}
 
-    /**
-     * Set port
-     *
-     * @param int $port
-     * @return $this
-     */
-    public function setPort($port)
-    {
-        $this->port = $port;
-        return $this;
-    }
+	/**
+	 * Set port
+	 *
+	 * @param int $port
+	 * @return $this
+	 */
+	public function setPort($port)
+	{
+		$this->port = $port;
+		return $this;
+	}
 
-    /**
-     * Get port
-     *
-     * @return int
-     */
-    public function getPort()
-    {
-        return $this->port;
-    }
+	/**
+	 * Get port
+	 *
+	 * @return int
+	 */
+	public function getPort()
+	{
+		return $this->port;
+	}
 
-    /**
-     * Get adresse:port string
-     * 
-     * @return string
-     */
-    public function getAddressPort()
-    {
-        return $this->getAddress() . ':' . $this->getPort();
-    }
+	/**
+	 * Get adresse:port string
+	 *
+	 * @return string
+	 */
+	public function getAddressPort()
+	{
+		return $this->getAddress() . ':' . $this->getPort();
+	}
 
-    /**
-     * Set state
-     *
-     * @param int $state
-     * @return $this
-     */
-    public function setState($state)
-    {
-        $this->state = $state;
-        return $this;
-    }
+	/**
+	 * Set state
+	 *
+	 * @param int $state
+	 * @return $this
+	 */
+	public function setState($state)
+	{
+		$this->state = $state;
+		return $this;
+	}
 
-    /**
-     * Get state
-     *
-     * @return int
-     */
-    public function getState()
-    {
-        return $this->state;
-    }
+	/**
+	 * Get state
+	 *
+	 * @return int
+	 */
+	public function getState()
+	{
+		return $this->state;
+	}
 
-    /**
-     * Set date
-     *
-     * @param \DateTime $date
-     * @return $this
-     */
-    public function setDate(\DateTime $date)
-    {
-        $this->date = $date;
-        return $this;
-    }
+	/**
+	 * Set date
+	 *
+	 * @param \DateTime $date
+	 * @return $this
+	 */
+	public function setDate(\DateTime $date)
+	{
+		$this->date = $date;
+		return $this;
+	}
 
-    /**
-     * Get date
-     *
-     * @return \DateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
+	/**
+	 * Get date
+	 *
+	 * @return \DateTime
+	 */
+	public function getDate()
+	{
+		return $this->date;
+	}
 
-    /**
-     * Set errors count
-     *
-     * @param int $count
-     * @return $this
-     */
-    public function setErrors($count)
-    {
-        $this->errors = $count;
-        return $this;
-    }
+	/**
+	 * Set errors count
+	 *
+	 * @param int $count
+	 * @return $this
+	 */
+	public function setErrors($count)
+	{
+		$this->errors = $count;
+		return $this;
+	}
 
-    /**
-     * Add an error
-     *
-     * @return $this
-     */
-    public function addError()
-    {
-        $this->errors++;
-        return $this;
-    }
+	/**
+	 * Add an error
+	 *
+	 * @return $this
+	 */
+	public function addError()
+	{
+		$this->errors++;
+		return $this;
+	}
 
-    /**
-     * Get errors count
-     *
-     * @return int
-     */
-    public function getErrors()
-    {
-        return $this->errors;
-    }
+	/**
+	 * Get errors count
+	 *
+	 * @return int
+	 */
+	public function getErrors()
+	{
+		return $this->errors;
+	}
+
 }

@@ -1,0 +1,20 @@
+<table class="table-proxies">
+    <tr>
+        <th>State</th>
+        <th>Address</th>
+        <th>Port</th>
+    </tr>
+    {% for proxy in proxies %}
+        <tr>
+            <td>
+                {% if proxy.id > 0 %}
+                    <font color="blue">Modified</font>
+                {% else %}
+                    <font color="green">New</font>
+                {% endif %}
+            </td>
+            <td>{{ proxy.address }}</td>
+            <td class="port">{{ proxy.port }}</td>
+        </tr>
+    {% endfor %}
+</table>
