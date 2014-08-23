@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Informations about a proxy
  *
  * @ORM\Table(name="proxy_proxies")
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="steevanb\ProxyBundle\EntityRepository\Proxy")
  */
 class Proxy
 {
