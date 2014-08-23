@@ -5,7 +5,7 @@
     "description": "Easy to use proxies",
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": { "kujaff\\ProxyBundle\\": "" }
+        "psr-0": { "steevanb\\ProxyBundle\\": "" }
     },
     "require": {
         "php": ">=5.3.3",
