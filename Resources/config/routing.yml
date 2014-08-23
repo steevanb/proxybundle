@@ -1,0 +1,3 @@
+proxy_freeproxylists:
+    path: /proxy/freeproxylists
+    defaults: { _controller: ProxyBundle:FreeProxyLists:index }
