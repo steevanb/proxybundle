@@ -1,0 +1,7 @@
+services:
+    proxy.install.install:
+        class: steevanb\ProxyBundle\Service\Install\Install
+        tags:
+            - { name: bundle.install }
+        calls:
+            - [ setContainer, [ @service_container ] ]
