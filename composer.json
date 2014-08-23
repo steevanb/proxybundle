@@ -1,0 +1,21 @@
+{
+    "name": "kujaff/proxybundle",
+    "license": "MIT",
+    "type": "bundle",
+    "description": "Easy to use proxies",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "kujaff\\ProxyBundle\\": "" }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "~2.3"
+    },
+    "target-dir": "kujaff/ProxyBundle",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/kujaff/proxybundle.git"
+        }
+    ]
+}
