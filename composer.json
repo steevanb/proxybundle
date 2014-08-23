@@ -1,5 +1,5 @@
 {
-    "name": "kujaff/proxybundle",
+    "name": "steevanb/proxybundle",
     "license": "MIT",
     "type": "bundle",
     "description": "Easy to use proxies",
@@ -11,11 +11,11 @@
         "php": ">=5.3.3",
         "symfony/symfony": "~2.3"
     },
-    "target-dir": "kujaff/ProxyBundle",
+    "target-dir": "steevanb/ProxyBundle",
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/kujaff/proxybundle.git"
+            "url": "https://github.com/steevanb/proxybundle.git"
         }
     ]
 }
