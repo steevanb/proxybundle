@@ -187,7 +187,7 @@ class Proxy
 	 *
 	 * @return $this
 	 */
-	public function addError()
+	public function incError()
 	{
 		$this->errors++;
 		return $this;
