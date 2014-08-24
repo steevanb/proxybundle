@@ -15,7 +15,7 @@ class Proxy extends EntityRepository
 	/**
 	 * Get a random proxy (only enabled ones)
 	 *
-	 * @return type
+	 * @return ProxyEntity
 	 */
 	public function findRandom()
 	{
