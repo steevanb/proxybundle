@@ -25,6 +25,7 @@ class Install extends ContainerAware implements BaseInstall
 				state SMALLINT UNSIGNED NOT NULL,
 				date DATETIME NOT NULL,
 				errors SMALLINT UNSIGNED NOT NULL,
+				lastErrorDate DATETIME DEFAULT NULL,
 				PRIMARY KEY(id)
 			) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB
 		');

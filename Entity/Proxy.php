@@ -63,6 +63,12 @@ class Proxy
 	private $errors = 0;
 
 	/**
+	 * @var \DateTime
+	 * @ORM\Column(type="datetime", nullable=true)
+	 */
+	private $lastErrorDate;
+
+	/**
 	 * Get id
 	 *
 	 * @return int
@@ -190,6 +196,7 @@ class Proxy
 	public function incError()
 	{
 		$this->errors++;
+		$this->setLastErrorDate(new \DateTime());
 		return $this;
 	}
 
@@ -201,6 +208,31 @@ class Proxy
 	public function getErrors()
 	{
 		return $this->errors;
+	}
+
+	/**
+	 * Set last error date
+	 *
+	 * @param \DateTime $date
+	 * @throws \Exception
+	 */
+	public function setLastErrorDate($date)
+	{
+		if ($date === null || $date instanceof \DateTime) {
+			$this->lastErrorDate = $date;
+		} else {
+			throw new \Exception('Invalid date format : "' . $date . '".');
+		}
+	}
+
+	/**
+	 * Get last error date
+	 *
+	 * @return \DateTime
+	 */
+	public function getLastErrorDate()
+	{
+		return $this->lastErrorDate;
 	}
 
 }
