@@ -73,9 +73,9 @@ class FreeProxyListsController extends Controller
 	 */
 	public function findAllAction(Request $request)
 	{
-		$proxies = $this->_findProxies($request->get('proxiesText'));
-
-		return array('proxies' => $proxies);
+		return array(
+			'proxies' => $this->_findProxies($request->get('proxiesText'))
+		);
 	}
 
 	/**
