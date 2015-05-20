@@ -1,3 +1,15 @@
 proxy_freeproxylists:
     path: /proxy/freeproxylists
     defaults: { _controller: ProxyBundle:FreeProxyLists:index }
+
+proxy_freeproxylists_findall:
+    path: /proxy/freeproxylists/findall
+    defaults: { _controller: ProxyBundle:FreeProxyLists:findAll }
+    requirements:
+        _method: POST
+
+proxy_freeproxylists_saveall:
+    path: /proxy/freeproxylists/saveall
+    defaults: { _controller: ProxyBundle:FreeProxyLists:saveAll }
+    requirements:
+        _method: POST
