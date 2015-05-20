@@ -9,7 +9,8 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "~2.3"
+        "symfony/symfony": "~2.3",
+        "kujaff/shortcutsbundle": "~2.1"
     },
     "target-dir": "steevanb/ProxyBundle",
     "repositories": [
