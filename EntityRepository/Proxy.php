@@ -22,7 +22,8 @@ class Proxy extends EntityRepository
 		$rsmb = new ResultSetMappingBuilder($this->_em);
 		$rsmb->addRootEntityFromClassMetadata('steevanb\ProxyBundle\Entity\Proxy', 'p');
 		$rsmb->addIndexBy('p', 'id');
-		$query = $this->_em->createNativeQuery('SELECT * FROM proxy_proxies p WHERE state = ' . ProxyEntity::STATE_ENABLED . ' ORDER BY RAND() LIMIT 1', $rsmb);
+		$query = $this->_em->createNativeQuery('SELECT * FROM proxy_proxies p WHERE state = :state ORDER BY RAND() LIMIT 1', $rsmb);
+        $query->setParameter('state', ProxyEntity::STATE_ENABLED);
 
 		return $query->getSingleResult();
 	}
