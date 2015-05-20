@@ -19,7 +19,7 @@ class FreeProxyListsController extends Controller
 	 * @param string $text
 	 * @return Proxy[]
 	 */
-	private function _findProxies($text)
+	private function findProxies($text)
 	{
 		$return = array();
 		$lines = explode("\n", str_replace("\r", null, $text));
@@ -74,7 +74,7 @@ class FreeProxyListsController extends Controller
 	public function findAllAction(Request $request)
 	{
 		return array(
-			'proxies' => $this->_findProxies($request->get('proxiesText'))
+			'proxies' => $this->findProxies($request->get('proxiesText'))
 		);
 	}
 
@@ -87,7 +87,7 @@ class FreeProxyListsController extends Controller
 	 */
 	public function saveAllAction(Request $request)
 	{
-		$proxies = $this->_findProxies($request->get('proxiesText'));
+		$proxies = $this->findProxies($request->get('proxiesText'));
 
 		foreach ($proxies as $proxy) {
 			_persist($proxy);

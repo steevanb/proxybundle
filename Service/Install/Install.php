@@ -11,9 +11,12 @@ use kujaff\VersionsBundle\Entity\Version;
 class Install extends ContainerAware implements BaseInstall
 {
 
-	use BundleNameFromClassName,
-	 DoctrineHelper;
+	use BundleNameFromClassName;
+    use DoctrineHelper;
 
+    /**
+     * @return Version
+     */
 	public function install()
 	{
 		$this->_dropTables(array('proxy_proxies'));
